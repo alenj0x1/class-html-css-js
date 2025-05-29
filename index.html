@@ -1,133 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="reset.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="reset.css" />
+  </head>
+  <body>
+    <span id="mode-editable">MODO EDITABLE</span>
     <header id="header" class="header">
-        <h1 class="title">Mi portafolio</h1>
-        <nav id="nav">
-            <ul>
-                <li>
-                    <a class="nav-link" href="#skill">Mis habilidades</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#projectsf">Mis proyectos</a>
-                </li>
-                <li>
-                    <a class="nav-link"  href="#contacts">
-                        Contacto
-                    </a>
-                </li>
-            </ul>
-        </nav>
+      <img
+        class="dyno"
+        src="https://storage.ko-fi.com/cdn/useruploads/post/f565d4fa-3dcf-4276-8ab6-27aaf28cfd6d_qxj6fa.gif"
+      />
+      <h1
+        title="Edita esto y cambia el nombre de la página"
+        id="header-title"
+        class="title"
+        contenteditable=""
+        oninput="changeTitlePage(event)"
+        onfocus="onFocusEditable()"
+        onblur="onBlurEditable()"
+      >
+        Mi portafolio
+      </h1>
+      <nav id="nav">
+        <ul>
+          <li>
+            <a class="nav-link" href="#skill">Mis habilidades</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#projectsf">Mis proyectos</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#contacts"> Contacto </a>
+          </li>
+
+          <li>
+            <button class="button" ondragenter="taka()" draggable="true">
+              <div class="button-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#c81414"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M3 11V13M6 8V16M9 10V14M12 7V17M15 4V20M18 9V15M21 11V13"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <section id="skill" class="section">
-        <header class="section-header">
-            <h2>Mis Habilidades</h2>
-            <p>Aquí estan mis habilidades</p>
-        </header>
-        <div class="section-main">
-            <ul id="section-skill-list">
-                <li class="skill angular">
-                    <span class="skill-name">
-                        Angular
-                    </span>
-                    <img class="skill-logo"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" alt="Logo Angular">
-                </li>
-                <li class="skill react">
-                    <span class="skill-name">
-                        React
-                    </span>
-                    <img class="skill-logo"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" alt="Logo de React">
-                  </li>
-                <li class="skill vue">
-                    <span class="skill-name">
-                        Vue.js
-                    </span>
-                    <img  class="skill-logo"  src="https://vuejs.org//images/logo.png" alt="Logo de Vue.js">
-                </li>
-            </ul>
-        </div>
+      <header class="section-header">
+        <h2>Mis Habilidades</h2>
+        <p>Aquí estan mis habilidades</p>
+      </header>
+      <div class="section-main">
+        <ul id="section-skill-list">
+          <li class="skill angular">
+            <span class="skill-name"> Angular </span>
+            <img
+              class="skill-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png"
+              alt="Logo Angular"
+            />
+          </li>
+          <li class="skill react">
+            <span class="skill-name"> React </span>
+            <img
+              class="skill-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png"
+              alt="Logo de React"
+            />
+          </li>
+          <li class="skill vue">
+            <span class="skill-name"> Vue.js </span>
+            <img
+              class="skill-logo"
+              src="https://vuejs.org//images/logo.png"
+              alt="Logo de Vue.js"
+            />
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section id="projects" class="section">
-        <header class="section-header">
-
-            <h2>Mis Proyectos</h2>
-            <p>Proyectos que he desarrollado</p>
-        </header>
-        <div class="section-main">
-            <ul id="list-projects">
-                <li>
-                    <article class="projects-article">
-                        <header class="projects-header">
-                            <span class="projects-title">
-                                Proyecto de generación de energia
-                            </span> 
-                            <p class="projects-description">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto cumque rem quae odit ipsam numquam quos quibusdam ut maiores nemo sequi natus iure nam, et ullam perspiciatis possimus obcaecati nobis.
-                                Explicabo ratione ipsum amet, corporis quisquam sint velit, atque vel doloribus nam laborum excepturi, minima a saepe veniam dolorem consequatur dignissimos sequi praesentium quaerat obcaecati aspernatur nisi animi incidunt. Laboriosam.
-                            </p>
-                        </header>
-                        <div>
-                            <img src="https://cdn.elperiodicodelaenergia.com/2017/08/75601.jpg" alt="energial eolico"
-                            height="50">
-                        </div>
-                        <footer class="section-footer">
-                            <button>Vista Previa</button>
-                            <button>Codgio Fuente</button>
-                        </footer>
-                    </article>
-                </li>
-                <li>
-                    <article class="projects-article">
-                        <header class="projects-header">
-                            <span class="projects-title">
-                                Sistema de Ventas
-                            </span class="projects-description"> 
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae consequatur cum suscipit possimus soluta doloremque rem accusamus nihil dolore molestias a aspernatur blanditiis eveniet delectus aliquid harum, quisquam quis! Quidem!</p>
-                        </header>
-                        <div>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGpzfoIgbBKA-4S3uxbWO6aFCCIIN8o9joA&s" alt="energial eolico"
-                            height="50">
-                        </div>
-                        <footer class="section-footer" >
-                            <button>Vista Previa</button>
-                            <button>Codgio Fuente</button>
-                        </footer>
-                    </article>
-                </li>
-                <li>
-                    <article class="projects-article">
-                        <header class="projects-header">
-                            <span class="projects-title">
-                                Recargar Page
-                            </span> 
-                            <p class="projects-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit culpa perspiciatis dignissimos ratione, quisquam ipsa eveniet earum dolorem ea inventore soluta laboriosam illo quasi excepturi libero? Nesciunt veritatis quisquam modi?
-                            Aspernatur, nulla exercitationem recusandae est expedita laudantium numquam vero quam debitis asperiores doloribus at temporibus eum ipsam ullam labore possimus, perferendis fugit itaque. Quisquam ducimus minus blanditiis, architecto fugiat unde!</p>
-                        </header>
-                        <div>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlGhTFXb0njuHVlEL8wxW5qKEvVvYsBqnvg&s" alt="energial eolico"
-                            height="50">
-                        </div>
-                        <footer class="section-footer">
-                            <button>Vista Previa</button>
-                            <button>Codgio Fuente</button>
-                        </footer>
-                    </article>
-                </li>
-            </ul>
-        </div>
+      <header class="section-header">
+        <h2>Mis Proyectos</h2>
+        <p>Proyectos que he desarrollado</p>
+      </header>
+      <div class="section-main">
+        <ul id="list-projects">
+          <li>
+            <article class="projects-article">
+              <header class="projects-header">
+                <span
+                  class="projects-title"
+                  contenteditable=""
+                  onfocus="onFocusEditable()"
+                  onblur="onBlurEditable()"
+                >
+                  Proyecto de generación de energia
+                </span>
+                <p class="projects-description">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto cumque rem quae odit ipsam numquam quos quibusdam
+                  ut maiores nemo sequi natus iure nam, et ullam perspiciatis
+                  possimus obcaecati nobis. Explicabo ratione ipsum amet,
+                  corporis quisquam sint velit, atque vel doloribus nam laborum
+                  excepturi, minima a saepe veniam dolorem consequatur
+                  dignissimos sequi praesentium quaerat obcaecati aspernatur
+                  nisi animi incidunt. Laboriosam.
+                </p>
+              </header>
+              <div>
+                <img
+                  src="https://cdn.elperiodicodelaenergia.com/2017/08/75601.jpg"
+                  alt="energial eolico"
+                  height="50"
+                />
+              </div>
+              <footer class="section-footer">
+                <button>Vista Previa</button>
+                <button>Codgio Fuente</button>
+              </footer>
+            </article>
+          </li>
+          <li>
+            <article class="projects-article">
+              <header class="projects-header">
+                <span class="projects-title"> Sistema de Ventas </span>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Recusandae consequatur cum suscipit possimus soluta doloremque
+                  rem accusamus nihil dolore molestias a aspernatur blanditiis
+                  eveniet delectus aliquid harum, quisquam quis! Quidem!
+                </p>
+              </header>
+              <div>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGpzfoIgbBKA-4S3uxbWO6aFCCIIN8o9joA&s"
+                  alt="energial eolico"
+                  height="50"
+                />
+              </div>
+              <footer class="section-footer">
+                <button>Vista Previa</button>
+                <button>Codgio Fuente</button>
+              </footer>
+            </article>
+          </li>
+          <li>
+            <article class="projects-article">
+              <header class="projects-header">
+                <span class="projects-title"> Recargar Page </span>
+                <p class="projects-description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Impedit culpa perspiciatis dignissimos ratione, quisquam ipsa
+                  eveniet earum dolorem ea inventore soluta laboriosam illo
+                  quasi excepturi libero? Nesciunt veritatis quisquam modi?
+                  Aspernatur, nulla exercitationem recusandae est expedita
+                  laudantium numquam vero quam debitis asperiores doloribus at
+                  temporibus eum ipsam ullam labore possimus, perferendis fugit
+                  itaque. Quisquam ducimus minus blanditiis, architecto fugiat
+                  unde!
+                </p>
+              </header>
+              <div>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlGhTFXb0njuHVlEL8wxW5qKEvVvYsBqnvg&s"
+                  alt="energial eolico"
+                  height="50"
+                />
+              </div>
+              <footer class="section-footer">
+                <button>Vista Previa</button>
+                <button>Codgio Fuente</button>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </div>
     </section>
-<section id="contact" class="section">
+    <section id="contact" class="section">
       <header class="section-header">
         <h2>Contacto</h2>
         <p>Para que contactes conmigo</p>
@@ -162,7 +237,9 @@
     </section>
 
     <footer id="footer">
-        <span>Creado por roger - 2025</span>
+      <span>Creado por roger - 2025</span>
     </footer>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>

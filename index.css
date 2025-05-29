@@ -29,12 +29,41 @@ toma el hijo directo
 
 #header,
 #footer {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 35px;
   border: 1px solid black;
   margin: 40px;
+}
+
+.dyno {
+  position: absolute;
+  top: -70px;
+  left: -40px;
+  height: 100px;
+  animation: dynoWalkRight 5s forwards, dynoWalkRotate 2s forwards,
+    dynoWalkLeft 5s forwards;
+  animation-delay: 0s, 5s, 7s;
+}
+
+@keyframes dynoWalkRight {
+  to {
+    left: 800px;
+  }
+}
+
+@keyframes dynoWalkRotate {
+  to {
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes dynoWalkLeft {
+  to {
+    left: -40px;
+  }
 }
 
 #header .title {
@@ -105,7 +134,6 @@ footer {
 }
 
 .skill {
-  position: relative;
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
@@ -215,6 +243,12 @@ button {
   border: 1px solid black;
   padding: 7px 20px;
   cursor: pointer;
+  color: black;
+}
+
+.button-icon {
+  height: 25px;
+  width: 25px;
 }
 
 button:hover {
@@ -282,4 +316,17 @@ button:hover {
     flex-direction: column;
     gap: 8px;
   }
+}
+
+#mode-editable {
+  display: none;
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 5px;
+}
+
+.mode-editable-visible {
+  display: flex !important;
 }
