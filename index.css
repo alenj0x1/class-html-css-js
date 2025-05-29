@@ -1,5 +1,30 @@
+/* 
+
+La jerarquia es 
+inline style
+id
+class
+element
+---------------------------------
+
+elemente > elemente
+toma el hijo directo
+
+
+
+
+
+
+
+*/
 * {
   font-family: monospace;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 #header,
@@ -9,6 +34,11 @@
   align-items: center;
   padding: 10px 35px;
   border: 1px solid black;
+  margin: 40px;
+}
+
+#header .title {
+  margin: 0;
 }
 
 #footer {
@@ -16,43 +46,36 @@
   justify-content: center;
 }
 
-#header .title {
-  margin: 0;
-  font-size: 2rem;
-}
-
-/* nav */
 #nav ul {
   display: flex;
-  gap: 10px;
-}
-
-#nav ul li {
+  gap: 15px;
   list-style: none;
+  padding: 0;
 }
 
 #nav .nav-link {
   color: black;
+  text-decoration: none;
 }
 
 .title {
   font-size: 2.5rem;
 }
 
-/* section */
 .section {
   display: flex;
   flex-direction: column;
   align-items: start;
   margin: 40px;
-  padding: 40px;
+  padding: 20px;
   border: 1px solid black;
   transition-duration: 200ms;
 }
 
 .section:hover,
-.skill:hover {
-  box-shadow: 20px 20px 0 black;
+.skill:hover,
+.projects-article:hover {
+  box-shadow: 5px 5px 0 black;
   transition-duration: 200ms;
 }
 
@@ -67,53 +90,124 @@
   margin: 0;
 }
 
-.section-main {
-  width: 100%;
+.section-main,
+footer {
+  align-self: stretch;
+  /* width: 100%; */
 }
 
-/* section skills */
-#section-skills-list {
+/* section skill*/
+#section-skill-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
-  flex-wrap: wrap;
   padding: 0;
 }
 
 .skill {
+  position: relative;
   display: flex;
+  width: 100%;
   flex-direction: column-reverse;
   align-items: center;
-  list-style: none;
+  gap: 20px;
   border: 1px solid black;
   padding: 10px;
+
+  list-style: none;
   transition-duration: 200ms;
 }
 
 .skill-logo {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  aspect-ratio: 1/1;
 }
 
-/* section contact */
+.skill.angular {
+  background-color: rgb(245, 197, 197) !important;
+}
+
+.skill.react {
+  background-color: rgb(197, 227, 245) !important;
+}
+
+.skill.vue {
+  background-color: rgb(169, 230, 169) !important;
+}
+
+.section-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  padding: 10px 0;
+}
+
+/*section projects*/
+
+#list-projects {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+.projects-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projects-article {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition-duration: 200ms;
+}
+
+.projects-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.projects-image {
+  height: 150px;
+}
+
+/*section contact*/
+
 #contact {
   background-color: black;
   color: white;
 }
 
 #contact:hover {
-  box-shadow: 20px 20px 0 rgb(117, 117, 117);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.562);
+  transition-duration: 200ms;
 }
 
 #contact-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center;
 }
 
 #contact-form-main {
   display: flex;
-  gap: 5px;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#contact-form-main input,
+textarea {
+  border: none;
+  outline: none;
 }
 
 button {
@@ -124,7 +218,8 @@ button {
 }
 
 button:hover {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
 .button-dark {
@@ -133,5 +228,58 @@ button:hover {
 }
 
 .button-dark:hover {
-  background-color: rgb(26, 26, 26);
+  background-color: white;
+  color: black;
+}
+
+@media screen and (max-width: 630px) {
+  #header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #section-skill-list {
+    flex-direction: column;
+  }
+
+  .skill {
+    width: 100%;
+  }
+
+  #contact {
+    gap: 7px;
+  }
+
+  #contact-form header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+  }
+
+  #contact-form h3,
+  #contact-form p {
+    margin: 0;
+  }
+
+  #contact-form-main {
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #contact-form-main input {
+    padding: 10px;
+  }
+
+  #contact-form-main textarea {
+    resize: none;
+  }
+
+  #contact-form-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
